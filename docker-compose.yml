@@ -1,5 +1,6 @@
 php7:
   build: .
+  image: laravel55:latest
   dockerfile: ./etc/docker/dockerfile
   volumes:
     - ./sites:/var/www/html

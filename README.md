@@ -15,6 +15,9 @@ Docker container with php 7.1 on Apache (httpd). Based on an docker-compose.yml 
 3. Build docker image: `docker-compose build`
 4. Run it: `docker run -d --name laravel55 -p 80:80`
 5. Install Composer: 
-```docker exec laravel55 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer```
+```
+docker exec laravel55 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+docker exec laravel55 mv composer.phar /usr/local/bin/composer
+```
 6. Install dependecies: `cd /var/www/html/laravel && composer install `
 6. open `http://localhost/laravel/public`
