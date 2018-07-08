@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y  git zip  \
         && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         && docker-php-ext-install -j$(nproc) gd
 
-WORKDIR /var/www/html
+WORKDIR /var/www/
 
-RUN git clone -b 5.5 https://github.com/laravel/laravel.git laravel
+RUN git clone -b 5.5 https://github.com/laravel/laravel.git html
 
 RUN chmod -R 777 /var/www/html/storage/
 RUN chmod -R 777 /var/www/html/storage/logs
