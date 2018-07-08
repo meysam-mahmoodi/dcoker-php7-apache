@@ -12,7 +12,7 @@ Docker container with php 7.1 on Apache (httpd). Based on an docker-compose.yml 
 # Installation
 1. clone this repository `git clone https://github.com/meysam-mahmoodi/docker-php7-apache2.git`
 2. navigate to it `cd docker-php7-apache2`
-3. Build docker image: `docker-compose build`
+3. Build docker image: `docker-compose build --project-name laravel55`
 4. Run it: `docker run -d --name laravel55 -p 80:80`
 5. Install Composer: 
 ```
