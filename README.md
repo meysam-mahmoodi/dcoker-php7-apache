@@ -13,10 +13,21 @@ Docker container with php 7.1 on Apache (httpd). Based on an docker-compose.yml 
 2. navigate to it `cd docker-php7-apache2`
 3. Build docker image: `docker-compose build`
 4. Run it: `docker run -d --name laravel55 -p 80:80 docker-php7-apache2_php7`
-5. Install Composer: 
+5. Install Composer inside it: 
 ```
 docker exec -w /var/www/html laravel55 sh -c "curl --silent --show-error https://getcomposer.org/installer | php"
 ```
-6. Install dependecies: 
+6. Install php packages: 
 ```docker exec -w /var/www/html laravel55 php composer.phar install ```
-7. open `http://localhost/public` or `http://your-server-ip-adress/public`
+7. Open `http://localhost/public` or `http://your-server-ip-adress/public`
+
+# Logging
+Showing logs : `docker logs -f laravel55`
+
+**Enabling php logs**
+1. Attach the container: `docker exec -it laravel55 /bin/bash`
+2. Create and open a php.ini: `nano /usr/local/etc/php/php.ini`
+3. insert it content of file `etc/php/php.ini`
+4. change `display_errors = Off` to `display_errors = On`
+5. exit from container: `exit`
+6. restart the container `docker restart laravel55`
