@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y  git zip  \
 
 WORKDIR /var/www/
 
-RUN git clone -b 5.5 https://github.com/laravel/laravel.git html
+RUN git clone https://github.com/meysam-mahmoodi/laravel55 html
 
 RUN chmod -R 777 /var/www/html/storage/
 RUN chmod -R 777 /var/www/html/storage/logs
